@@ -1,10 +1,9 @@
 from flask import Flask, render_template_string
 from flask_socketio import SocketIO, emit, join_room, leave_room
-import eventlet
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your-secret-key-here'  # Change this for production
-socketio = SocketIO(app, cors_allowed_origins="*", async_mode='eventlet')
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode='gevent')
 
 # Inline HTML template for index.html (served at /)
 INDEX_HTML = '''
