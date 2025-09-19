@@ -19,14 +19,14 @@
 <body>
     <h1>Simple Network Chat (like Discord)</h1>
     <p>Open this file (index.html) on any device and connect to the server URL below.</p>
-    <p><strong>Server URL:</strong> wss://your-render-app-name.onrender.com (update after deployment)</p>
+    <p><strong>Server URL:</strong> wss://quasar.onrender.com</p>
     <input type="text" id="username" placeholder="Enter your username" required>
     <div id="chat"></div>
     <input type="text" id="input" placeholder="Type a message..." onkeypress="if(event.key==='Enter') sendMessage();">
     <button onclick="sendMessage();">Send</button>
 
     <script>
-        const socket = io('https://your-render-app-name.onrender.com', { transports: ['websocket'] });  // Update with your Render URL
+        const socket = io('https://quasar.onrender.com', { transports: ['websocket'] });
         const chat = document.getElementById('chat');
         const input = document.getElementById('input');
         const usernameInput = document.getElementById('username');
